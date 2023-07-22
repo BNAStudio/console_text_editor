@@ -1,0 +1,23 @@
+{
+  "name": "console_text_editor",
+  "version": "1.0.0",
+  "description": "personal projecto for practice NODE",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BNAStudio/console_text_editor.git"
+  },
+  "keywords": [
+    "NODE",
+    "textEditor"
+  ],
+  "author": "BNA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BNAStudio/console_text_editor/issues"
+  },
+  "homepage": "https://github.com/BNAStudio/console_text_editor#readme"
+}
