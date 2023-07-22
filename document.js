@@ -12,10 +12,10 @@ class Document {
     /**
      * Comprueba si existe un archivo con el mismo nombre asignado
      */
-    exist(name) {
+    exists(name) {
         return fs.existsSync(`${this._dir}/${name}`);
     }
-    
+
     /**
      * Almacena el texto ingresado por el usuario
      */
@@ -23,7 +23,7 @@ class Document {
         this._content = os.EOL + text; // os.EOL === \n, basicamente es un salto de linea
         this._isSaved = false;
     }
-    
+
     /**
      * Almacena el documento, y si es el caso lo renombra
      */
@@ -32,12 +32,14 @@ class Document {
         this._isSaved = true;
         this._fileName = name;
     }
-    
+
     /**
      * Almacena el documento conservando el nombre actual
      */
     save() {
         fs.writeFileSync(`${this._dir}/${this._fileName}`, this._content);
+        this._isSaved = true;
+        this._fileName = this._fileName;
     }
 
     /**
@@ -51,7 +53,7 @@ class Document {
      * Comprueba si el documento tiene nombre
      */
     hasName() {
-        if(this._fileName != ' ') return true;
+        if (this._fileName != '') return true;
         return false
     }
 
@@ -73,7 +75,7 @@ class Document {
      * 
      */
     open(name) {
-        this._content = fs.readFileSync(`${this._dir}/${name}`, 'utf-8');
+        this._content = fs.readFileSync(`${this._dir}/${name}`, 'UTF-8');
         this._fileName = name;
         this._isSaved = true;
         return this._content;
